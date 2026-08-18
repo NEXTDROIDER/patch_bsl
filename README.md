@@ -26,3 +26,4 @@ chmod +x patch.sh && ./patch.sh
 .\patch.bat
 ```
 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bccd90bd-2ce1-4ad6-b6ba-4ac1591b9d60" />

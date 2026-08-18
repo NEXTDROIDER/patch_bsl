@@ -43,7 +43,7 @@ if not exist "apktool.jar" (
 
 echo [2/4] Декомпиляция APK через Apktool (это может занять время)...
 if exist "%TEMP_DIR%" rmdir /s /q "%TEMP_DIR%"
-"C:\Program Files\Eclipse Adoptium\jdk-25.0.4.7-hotspot\bin\javaw.exe" -jar apktool.jar d "%APK_NAME%" -o "%TEMP_DIR%" --no-src
+"%WINDIR%\..\Program Files\Eclipse Adoptium\jdk-25.0.4.7-hotspot\bin\javaw.exe" -jar apktool.jar d "%APK_NAME%" -o "%TEMP_DIR%" --no-src
 
 if not exist "%CONFIG_PATH%" (
     echo [ОШИБКА] Файл конфигурации не найден по пути: %CONFIG_PATH%
@@ -57,7 +57,7 @@ powershell -Command "$path='%CONFIG_PATH%'; $text=[System.IO.File]::ReadAllText(
 
 echo [4/4] Сборка модифицированного APK обратно...
 if exist "%OUTPUT_APK%" del /f /q "%OUTPUT_APK%"
-"C:\Program Files\Eclipse Adoptium\jdk-25.0.4.7-hotspot\bin\javaw.exe" -jar apktool.jar b "%TEMP_DIR%" -o "%OUTPUT_APK%"
+"%WINDIR%\..\Program Files\Eclipse Adoptium\jdk-25.0.4.7-hotspot\bin\javaw.exe" -jar apktool.jar b "%TEMP_DIR%" -o "%OUTPUT_APK%"
 
 echo Очистка временных папок...
 rmdir /s /q "%TEMP_DIR%"
